@@ -1,0 +1,36 @@
+body {
+	margin: 20px;
+}
+
+.verticalrowOne {
+	margin-top: 50px;
+}
+
+.buttonSizeVerticalRowOne {
+	border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 210px;
+}
+
+.searchBtn {
+	margin-top: 20px;
+}
+
+.buttonsFullLengthCenter {
+	width: 50%;
+	margin:0 auto;
+    display:block;
+}
+
+.center {
+	text-align: center;
+}
+
+.bold {
+	font-weight: bolder;
+}
