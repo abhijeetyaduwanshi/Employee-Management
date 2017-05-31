@@ -42,8 +42,8 @@
 					table = table + "<td class='zip'>" + value + "</td>";
 					value = data.payload[i].phone;
 					table = table + "<td class='phone'>" + value + "</td>";
-					table = table + "<td>" + "<button class='btn btn-warning'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>" + "</td>";
-					table = table + "<td>" + "<button type='button' data-toggle='modal' data-target='#deleteModal' class='btn btn-danger'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></button>" + "</td>";
+					table = table + "<td>" + "<button class='buttonsEdit'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>" + "</td>";
+					table = table + "<td>" + "<button type='button' data-toggle='modal' data-target='#deleteModal' class='buttonsDelete'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></button>" + "</td>";
 					table = table + "</tr>";
 				}
 
@@ -206,8 +206,8 @@
 					table = table + "<td class='zip'>" + value + "</td>";
 					value = data.payload.phone;
 					table = table + "<td class='phone'>" + value + "</td>";
-					table = table + "<td>" + "<button class='btn btn-warning'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>" + "</td>";
-					table = table + "<td>" + "<button type='button' data-toggle='modal' data-target='#deleteModal' class='btn btn-danger'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></button>" + "</td>";
+					table = table + "<td>" + "<button class='buttonsEdit'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>" + "</td>";
+					table = table + "<td>" + "<button type='button' data-toggle='modal' data-target='#deleteModal' class='buttonsDelete'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></button>" + "</td>";
 					table = table + "</tr>";
 					table = table + "</tbody></table>";
 

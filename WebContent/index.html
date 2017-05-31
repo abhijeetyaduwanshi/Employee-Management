@@ -1,202 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Employee</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="styles/styles.css">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>Employee</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/styles.css">
+	</head>
 <body>
 
+	<!-- Header section -->
+	<header>
+		<!-- Application icon -->
+		<span class="bold headerHeading"><font size="3">Employees Management</font></span>
+		<div class="headerBtnSection">
+			<!-- Get all employees -->
+			<button class="headerBtn" id="getAll_btn">Get All Employees</button>
+			<!-- Add new employee -->
+			<button class="headerBtn" id="addEmpExpand">Add Employee</button>
+			<!-- Search employee with their uid -->
+			<input class="headerBtn headerSearchInput" id="empId_input" type="text" placeholder="Search employee UID" />
+			<button id="getEmp_btn" class="headerBtn headerSearchBtn">
+				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			</button>
+		</div>
+	</header>
+	<!-- End of header section -->
+
 	<!-- Bootstrap container -->
-	<div class="container-fluid">
-
-		<!-- Bootstrap grid -->
-		<div class="row">
-
-			<!-- Vertical row one -->
-			<div class="col-sm-2 verticalrowOne">
-
-				<!-- Get all employees -->
-				<button class="btn btn-primary buttonSizeVerticalRowOne" id="getAll_btn">Get All Employees</button>
-
-				<!-- Search employee with their uid -->
-				<div class="input-group col-sm-9 searchBtn">
-					<input id="empId_input" class="form-control" type="text" placeholder="Search employee UID" />
-					<span class="input-group-btn">
-						<button id="getEmp_btn" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-					</span>
-				</div>
-
-				<!-- Add new employee -->
-				<button class="btn btn-primary buttonSizeVerticalRowOne" id="addEmpExpand">Add Employee</button>
-
+	<div class="container">
+		<!-- Body section -->
+		<section>
+		
+			<!-- Add new employee form -->
+			<div id="addEmpSection">
+				<form>
+					<table class="table">
+						<thead>
+							<tr>
+								<td colspan="4" class="center bold">Add Employee</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><label>1. First Name</label></td>
+								<td><input type="text" placeholder="First Name" id="fname_input" class="form-control" /></td>
+								<td><label>2. Last Name</label></td>
+								<td><input type="text" placeholder="Last Name" id="lname_input" class="form-control" /></td>
+							</tr>
+							<tr>
+								<td colspan="1"><label>3. Email</label></td>
+								<td colspan="3"><input type="text" placeholder="Email" id="email_input" class="form-control" /></td>
+							</tr>
+							<tr>
+								<td><label>4. Address 1</label></td>
+								<td><input type="text" placeholder="Address line 1" id="address1_input" class="form-control" /></td>
+								<td><label>5. Address 2</label></td>
+								<td><input type="text" placeholder="Address line 2" id="address2_input" class="form-control" /></td>
+							</tr>
+							<tr>
+								<td><label>6. City</label></td>
+								<td><input type="text" placeholder="City" id="city_input" class="form-control" /></td>
+								<td><label>7. State</label></td>
+								<td><input type="text" placeholder="State" id="state_input" class="form-control" /></td>
+							</tr>
+							<tr>
+								<td><label>8. Zip Code</label></td>
+								<td><input type="text" placeholder="Zip" id="zip_input" class="form-control" /></td>
+								<td><label>9. Phone</label></td>
+								<td><input type="text" placeholder="Phone" id="phone_input" class="form-control" /></td>
+							</tr>
+							<tr>
+								<td colspan="4"><button type="submit" id="addEmp_btn" class="buttonsFullLengthCenter">Add Employee</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
 			</div>
-			<!-- End of vertical row one -->
+			<!-- End of add new employee form -->
 
-			<!-- Vertical row two -->
-			<div class="col-sm-10">
+			<!-- Update employee form -->
+			<div id="updateEmpSection">
+				<form>
+					<table class="table">
+						<thead>
+							<tr>
+								<td colspan="4" id="update_header_input" class="center bold"></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="1"><label>1. UID</label></td>
+								<td colspan="3"><input type="text" id="update_uid_input" class="form-control" disabled /></td>
+							</tr>
+							<tr>
+								<td><label>2. First Name</label></td>
+								<td><input type="text" placeholder="First Name" id="update_fname_input" class="form-control" /></td>
+								<td><label>3. Last Name</label></td>
+								<td><input type="text" placeholder="Last Name" id="update_lname_input" class="form-control" /></td>
+							</tr>
+							<tr>
+								<td colspan="1"><label>4. Email</label></td>
+								<td colspan="3"><input type="text" placeholder="Email" id="update_email_input" class="form-control" /></td>
+							</tr>
+							<tr>
+								<td><label>5. Address 1</label></td>
+								<td><input type="text" placeholder="Address line 1" id="update_address1_input" class="form-control" /></td>
+								<td><label>6. Address 2</label></td>
+								<td><input type="text" placeholder="Address line 2" id="update_address2_input" class="form-control" /></td>
+							</tr>
+							<tr>
+								<td><label>7. City</label></td>
+								<td><input type="text" placeholder="City" id="update_city_input" class="form-control" /></td>
+								<td><label>8. State</label></td>
+								<td><input type="text" placeholder="State" id="update_state_input" class="form-control" /></td>
+							</tr>
+							<tr>
+								<td><label>9. Zip Code</label></td>
+								<td><input type="text" placeholder="Zip" id="update_zip_input" class="form-control" /></td>
+								<td><label>10. Phone</label></td>
+								<td><input type="text" placeholder="Phone" id="update_phone_input" class="form-control" /></td>
+							</tr>
+							<tr>
+								<td colspan="4"><button type="submit" class="buttonsFullLengthCenter" id="updateEmp_btn">Update Employee</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<!-- End of update employee form -->
 
-				<!-- Add new employee form -->
-				<div id="addEmpSection">
-					<form>
-						<table class="table">
-							<thead>
-								<tr>
-									<td colspan="4" class="center bold">Add Employee</td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td><label>1. First Name</label></td>
-									<td><input type="text" placeholder="First Name" id="fname_input" class="form-control" /></td>
-									<td><label>2. Last Name</label></td>
-									<td><input type="text" placeholder="Last Name" id="lname_input" class="form-control" /></td>
-								</tr>
-								<tr>
-									<td colspan="1"><label>3. Email</label></td>
-									<td colspan="3"><input type="text" placeholder="Email" id="email_input" class="form-control" /></td>
-								</tr>
-								<tr>
-									<td><label>4. Address 1</label></td>
-									<td><input type="text" placeholder="Address line 1" id="address1_input" class="form-control" /></td>
-									<td><label>5. Address 2</label></td>
-									<td><input type="text" placeholder="Address line 2" id="address2_input" class="form-control" /></td>
-								</tr>
-								<tr>
-									<td><label>6. City</label></td>
-									<td><input type="text" placeholder="City" id="city_input" class="form-control" /></td>
-									<td><label>7. State</label></td>
-									<td><input type="text" placeholder="State" id="state_input" class="form-control" /></td>
-								</tr>
-								<tr>
-									<td><label>8. Zip Code</label></td>
-									<td><input type="text" placeholder="Zip" id="zip_input" class="form-control" /></td>
-									<td><label>9. Phone</label></td>
-									<td><input type="text" placeholder="Phone" id="phone_input" class="form-control" /></td>
-								</tr>
-								<tr>
-									<td colspan="4"><button type="submit" id="addEmp_btn" class="btn btn-primary buttonsFullLengthCenter">Add Employee</button></td>
-								</tr>
-							</tbody>
-						</table>
-					</form>
-				</div>
-				<!-- End of add new employee form -->
-
-				<!-- Update employee form -->
-				<div id="updateEmpSection">
-					<form>
-						<table class="table">
-							<thead>
-								<tr>
-									<td colspan="4" id="update_header_input" class="center bold"></td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td colspan="1"><label>1. UID</label></td>
-									<td colspan="3"><input type="text" id="update_uid_input" class="form-control" disabled /></td>
-								</tr>
-								<tr>
-									<td><label>2. First Name</label></td>
-									<td><input type="text" placeholder="First Name" id="update_fname_input" class="form-control" /></td>
-									<td><label>3. Last Name</label></td>
-									<td><input type="text" placeholder="Last Name" id="update_lname_input" class="form-control" /></td>
-								</tr>
-								<tr>
-									<td colspan="1"><label>4. Email</label></td>
-									<td colspan="3"><input type="text" placeholder="Email" id="update_email_input" class="form-control" /></td>
-								</tr>
-								<tr>
-									<td><label>5. Address 1</label></td>
-									<td><input type="text" placeholder="Address line 1" id="update_address1_input" class="form-control" /></td>
-									<td><label>6. Address 2</label></td>
-									<td><input type="text" placeholder="Address line 2" id="update_address2_input" class="form-control" /></td>
-								</tr>
-								<tr>
-									<td><label>7. City</label></td>
-									<td><input type="text" placeholder="City" id="update_city_input" class="form-control" /></td>
-									<td><label>8. State</label></td>
-									<td><input type="text" placeholder="State" id="update_state_input" class="form-control" /></td>
-								</tr>
-								<tr>
-									<td><label>9. Zip Code</label></td>
-									<td><input type="text" placeholder="Zip" id="update_zip_input" class="form-control" /></td>
-									<td><label>10. Phone</label></td>
-									<td><input type="text" placeholder="Phone" id="update_phone_input" class="form-control" /></td>
-								</tr>
-								<tr>
-									<td colspan="4"><button type="submit" class="btn btn-primary buttonsFullLengthCenter" id="updateEmp_btn">Update Employee</button></td>
-								</tr>
-							</tbody>
-						</table>
-					</form>
-				</div>
-				<!-- End of update employee form -->
-				
-				<!-- Delete employee -->
-				<div id="deleteEmpSection">
-					<div class="modal fade" id="deleteModal" role="dialog">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-									<h4 id="delete_header_input" class="modal-title">Modal Header</h4>
-								</div>
-								<div class="modal-body">
-									<label>1. UID</label>
-									<span id="delete_uid_input"></span>
-								<hr />
-									<label>2. First Name</label>
-									<span id="delete_fname_input"></span>
-								<hr />
-									<label>3. Last Name</label>
-									<span id="delete_lname_input"></span>
-								<hr />
-									<label>4. Email</label>
-									<span id="delete_email_input"></span>
-								<hr />
-									<label>5. Address 1</label>
-									<span id="delete_address1_input"></span>
-								<hr />
-									<label>6. Address 2</label>
-									<span id="delete_address2_input"></span>
-								<hr />
-									<label>7. City</label>
-									<span id="delete_city_input"></span>
-								<hr />
-									<label>8. State</label>
-									<span id="delete_state_input"></span>
-								<hr />
-									<label>9. Zip Code</label>
-									<span id="delete_zip_input"></span>
-								<hr />
-									<label>10. Phone</label>
-									<span id="delete_phone_input"></span>							
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-danger" data-dismiss="modal" id="deleteEmp_btn">Delete Employee</button>
-									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								</div>
+			<!-- Delete employee -->
+			<div id="deleteEmpSection">
+				<div class="modal fade" id="deleteModal" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 id="delete_header_input" class="modal-title">Modal Header</h4>
+							</div>
+							<div class="modal-body">
+								<label>1. UID</label> <span id="delete_uid_input"></span>
+								<br />
+								<label>2. First Name</label> <span id="delete_fname_input"></span>
+								<br />
+								<label>3. Last Name</label> <span id="delete_lname_input"></span>
+								<br />
+								<label>4. Email</label> <span id="delete_email_input"></span>
+								<br />
+								<label>5. Address 1</label> <span id="delete_address1_input"></span>
+								<br />
+								<label>6. Address 2</label> <span id="delete_address2_input"></span>
+								<br />
+								<label>7. City</label> <span id="delete_city_input"></span>
+								<br />
+								<label>8. State</label> <span id="delete_state_input"></span>
+								<br />
+								<label>9. Zip Code</label> <span id="delete_zip_input"></span>
+								<br />
+								<label>10. Phone</label> <span id="delete_phone_input"></span>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="buttonsDelete" data-dismiss="modal" id="deleteEmp_btn">Delete Employee</button>
+								<button type="button" class="buttonsCancel" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>
-					</div>	
+					</div>
 				</div>
-				<!-- End of delete employee -->
-
-				<!-- Employee table -->
-				<div id="employeeTable"></div>
-				<!-- End of employee table -->
-
 			</div>
-			<!-- End of vertical row two -->
+			<!-- End of delete employee -->
 
-		</div>
-		<!-- End of bootstrap grid -->
+			<!-- Employee table -->
+			<div id="employeeTable"></div>
+			<!-- End of employee table -->
 
+		</section>
+		<!-- End of body section -->
 	</div>
 	<!-- End of bootstrap container -->
+
+	<!-- Footer section -->
+	<!-- <footer>
+		<span class="footerHeading">footer</span>
+	</footer>  -->
+	<!-- End of footer section -->
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
